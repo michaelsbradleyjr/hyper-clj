@@ -3,8 +3,12 @@
   :url "https://github.com/michaelsbradleyjr/hyper-cloj/tree/master/maze"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[compojure "1.1.0"]
+  :dependencies [[com.ashafa/clutch "0.4.0-SNAPSHOT"]
+                 [compojure "1.1.0"]
+                 [domina "1.0.0-beta4"]
+                 [enlive "1.0.1"]
                  [hiccup "1.0.0"]
                  [org.clojure/clojure "1.4.0"]
+                 [org.clojure/clojurescript "0.0-1236"]
                  [ring "1.1.0"]]
-  :plugins [[lein-swank "1.4.4"]])
+  :plugins [[lein-cljsbuild "0.2.1"]])
