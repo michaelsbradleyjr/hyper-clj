@@ -10,5 +10,8 @@
                  [hiccup "1.0.0"]
                  [org.clojure/clojure "1.4.0"]
                  [org.clojure/clojurescript "0.0-1236"]
-                 [ring "1.1.0"]]
+                 [ring "1.1.0"]
+                 [ring/ring-devel "1.1.0"]
+                 [ring-refresh "0.1.0"]]
+  :main io.turbonode.hyper-cloj.maze
   :plugins [[lein-cljsbuild "0.2.1"]])

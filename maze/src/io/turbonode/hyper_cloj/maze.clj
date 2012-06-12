@@ -1,13 +1,21 @@
 (ns io.turbonode.hyper-cloj.maze
-  (:use [compojure.core :only (GET defroutes)]
-        [ring.adapter.jetty :only (run-jetty)])
+  (:use compojure.core
+        [compojure.route :as route]
+        [compojure.handler :as handler]
+        [ring.adapter.jetty :only (run-jetty)]
+        [ring.middleware.reload :only (wrap-reload)]
+        [ring.middleware.refresh :only (wrap-refresh)])
   (:require [io.turbonode.hyper-cloj.maze.templates :as templates]
-            (compojure handler route)
             [ring.util.response :as response]))
 
 (defroutes app*
-  (compojure.route/not-found "Sorry, there's nothing here."))
+  (route/resources "/")
+  (GET "/amazing" [] "tubes!")
+  (route/not-found "Sorry, there's nothing here."))
 
-(def app (compojure.handler/api #'app*))
+(def app (handler/site app*))
 
-(defonce server (run-jetty #'app {:port 4242 :join? false}))
+(defn -main [& [port]]
+  (let [port (Integer. (or port (System/getenv "PORT")))]
+    (run-jetty (wrap-refresh app)
+               {:port port :join? false})))
