@@ -16,6 +16,7 @@
 (defroutes app*
   (route/resources "/")
   (GET "/maze/" [] (#'views/collection))
+  (GET "/maze/:m/" [m] (#'views/item m))
   (route/not-found "Sorry, there's nothing here."))
 
 (def app (handler/site #'app*))

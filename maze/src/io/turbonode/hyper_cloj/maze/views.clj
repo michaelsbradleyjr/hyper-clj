@@ -14,7 +14,13 @@
                                (h/set-attr :href "/maze/"))
                    (h/sniptest [:link]
                                (h/clone-for [m (data/all-mazes)]
-                                 (h/set-attr :href (str "/maze/" (:id m))))))))
-
-;; (def item []
-;;   (xml-content ))
+                                 (h/set-attr :href (str "/maze/" (:id m) "/")))))))
+(defn item [id]
+  (when-let [maze (data/get-maze id)]
+    (xml-content (-> templates/item
+                     (h/sniptest [:item]
+                                 (h/set-attr :href (str "/maze/" id "/")))
+                     (h/sniptest [[:link (h/attr= :rel "collection")]]
+                                 (h/set-attr :href "/maze/"))
+                     (h/sniptest [[:link (h/attr= :rel "start")]]
+                                 (h/set-attr :href (str "/maze/" id "/0:north")))))))
