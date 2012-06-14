@@ -53,7 +53,7 @@
                                        (h/do->
                                          (h/set-attr :href (str "/maze/" maze "/" cell))
                                          (h/set-attr :rel "current")))
-                           (filler doors maze)
+                           (filler doors maze exit)
                            (remover (conj walls "start"))
                            (h/sniptest [[:link (h/attr= :rel "maze")]]
                                        (h/set-attr :href (str "/maze/" maze "/")))
@@ -75,7 +75,7 @@
                                  (h/set-attr :href "/maze/"))
                      (remover ["north" "west" "south" "east" "exit"])))))
 
-(defn- filler [snip values maze]
+(defn- filler [snip values maze exit]
   (let [snip (if (true? exit)
                (h/sniptest snip
                            [[:link (h/attr= :rel "exit")]]
@@ -87,7 +87,7 @@
                           [[:link (h/attr= :rel (v 0))]]
                           (h/set-attr :href
                                       (str "/maze/" maze "/" (str (v 1) ":" (v 0))))))
-            snip values))))
+            snip values)))
 
 (defn- remover [snip values]
   (reduce (fn [snip v]
