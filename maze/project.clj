@@ -1,8 +1,8 @@
-(defproject io.turbonode.hyper-cloj/maze "0.1.0-SNAPSHOT"
+(defproject io.turbonode.hyper-clj/maze "0.1.0-SNAPSHOT"
   :description "Maze Game"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :url "https://github.com/michaelsbradleyjr/hyper-cloj/tree/master/maze"
+  :url "https://github.com/michaelsbradleyjr/hyper-clj/tree/master/maze"
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   :cljsbuild {
               :builds [{:source-path "src-cljs"
@@ -21,5 +21,5 @@
                  [ring-refresh "0.1.0"]
                  [swank-clojure "1.4.2"]]
   :plugins [[lein-cljsbuild "0.2.1"]]
-  :ring {:handler io.turbonode.hyper-cloj.maze/app
+  :ring {:handler io.turbonode.hyper-clj.maze/app
          :auto-refresh? true})
