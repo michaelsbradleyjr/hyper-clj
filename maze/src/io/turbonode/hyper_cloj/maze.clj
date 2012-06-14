@@ -2,6 +2,7 @@
   (:use compojure.core
         [compojure.route :as route]
         [compojure.handler :as handler]
+        hiccup.bootstrap.middleware
         [ring.adapter.jetty :only (run-jetty)])
   (:require [io.turbonode.hyper-cloj.maze.views :as views]
             [swank.swank]))
@@ -15,13 +16,14 @@
 
 (defroutes app*
   (route/resources "/")
+  (GET "/" [] (#'views/index))
   (GET "/maze/" [] (#'views/collection))
   (GET "/maze/:m/" [m] (#'views/item m))
   (GET "/maze/:m/999" [m] (#'views/exit m))
   (GET "/maze/:m/:c" [m c] (#'views/cell m c))
   (route/not-found "Sorry, there's nothing here."))
 
-(def app (handler/site #'app*))
+(def app (wrap-bootstrap-resources (handler/site #'app*)))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (System/getenv "PORT")))]

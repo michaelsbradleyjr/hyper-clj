@@ -4,12 +4,10 @@
             [io.turbonode.hyper-cloj.maze.templates :as templates]
             [net.cgrand.enlive-html :as h]))
 
-(defn xml-content [body]
-  {:headers {"Content-Type" "application/xml"}
-   :body (str "<?xml version=\"1.0\" ?>"
-              body)})
+(declare filler remover xml-content)
 
-(declare filler remover)
+(defn index []
+  templates/index)
 
 (defn collection []
   (xml-content (-> templates/collection
@@ -95,3 +93,8 @@
                         [[:link (h/attr= :rel v)]]
                         nil))
           snip values))
+
+(defn- xml-content [body]
+  {:headers {"Content-Type" "application/xml"}
+   :body (str "<?xml version=\"1.0\" ?>"
+              body)})
