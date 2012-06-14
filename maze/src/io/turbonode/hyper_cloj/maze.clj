@@ -17,6 +17,8 @@
   (route/resources "/")
   (GET "/maze/" [] (#'views/collection))
   (GET "/maze/:m/" [m] (#'views/item m))
+  (GET "/maze/:m/999" [m] (#'views/exit m))
+  (GET "/maze/:m/:c" [m c] (#'views/cell m c))
   (route/not-found "Sorry, there's nothing here."))
 
 (def app (handler/site #'app*))

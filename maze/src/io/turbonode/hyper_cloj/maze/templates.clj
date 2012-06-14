@@ -11,15 +11,16 @@
 
 (def item
   (wrap [:item {:href ""}
-           [:link {:href "" :rel "collection"}]
-           [:link {:href "" :rel "start"}]]))
+           [:link {:href "" :rel "start"}]
+           [:link {:href "" :rel "collection"}]]))
 
 (def cell
-  (wrap [:cell {:href ""}
+  (wrap [:cell {:href "" :rel ""}
            [:link {:href "" :rel "north"}]
+           [:link {:href "" :rel "west"}]
            [:link {:href "" :rel "south"}]
            [:link {:href "" :rel "east"}]
-           [:link {:href "" :rel "west"}]
+           [:link {:href "" :rel "start"}]
            [:link {:href "" :rel "exit"}]
            [:link {:href "" :rel "maze"}]
            [:link {:href "" :rel "collection"}]]))

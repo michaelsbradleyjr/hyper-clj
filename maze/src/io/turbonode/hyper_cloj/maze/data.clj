@@ -7,11 +7,13 @@
 (defn all-mazes []
   (clutch/all-documents mazes-db))
 
-(defn get-maze [id]
-  (clutch/get-document mazes-db id))
+(defn get-maze [maze]
+  (clutch/get-document mazes-db maze))
 
-(defn get-cell []
-  )
+(defn get-cell [maze cell]
+  ((keyword cell) (:cells (if (string? maze)
+                            (get-maze maze)
+                            maze))))
 
 (defonce five-by-five
   (let [five-by-five (clutch/get-document mazes-db "five-by-five")]
