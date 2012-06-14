@@ -6,3 +6,5 @@ fuse*
 ._*
 .#*
 *.swp
+
+target/
