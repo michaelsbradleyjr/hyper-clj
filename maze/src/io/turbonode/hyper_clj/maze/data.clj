@@ -1,4 +1,4 @@
-(ns io.turbonode.hyper-cloj.maze.data
+(ns io.turbonode.hyper-clj.maze.data
   (:require [com.ashafa.clutch :as clutch]))
 
 (def mazes-db

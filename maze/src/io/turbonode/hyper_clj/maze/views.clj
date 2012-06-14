@@ -1,7 +1,7 @@
-(ns io.turbonode.hyper-cloj.maze.views
+(ns io.turbonode.hyper-clj.maze.views
   (:use [clojure.string :only (split)])
-  (:require [io.turbonode.hyper-cloj.maze.data :as data]
-            [io.turbonode.hyper-cloj.maze.templates :as templates]
+  (:require [io.turbonode.hyper-clj.maze.data :as data]
+            [io.turbonode.hyper-clj.maze.templates :as templates]
             [net.cgrand.enlive-html :as h]))
 
 (declare filler remover xml-content)

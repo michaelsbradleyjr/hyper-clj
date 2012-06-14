@@ -1,4 +1,4 @@
-(ns io.turbonode.hyper-cloj.maze.templates
+(ns io.turbonode.hyper-clj.maze.templates
   (:use hiccup.core
         hiccup.element
         hiccup.page
