@@ -28,32 +28,32 @@
         [:input {:type "submit" :value "Go"}]
        ]]]]))
 
-(defn- wrap-as-maze [els]
+(defn- wrap-with-maze [els]
   (html [:maze {:version "1.0"}
          els]))
 
 (def collection
-  (wrap-as-maze [:collection {:href ""}
-                 [:link {:href ""}]]))
+  (wrap-with-maze [:collection {:href ""}
+                   [:link {:href ""}]]))
 
 (def item
-  (wrap-as-maze [:item {:href ""}
-                 [:link {:href "" :rel "start"}]
-                 [:link {:href "" :rel "collection"}]]))
+  (wrap-with-maze [:item {:href ""}
+                   [:link {:href "" :rel "start"}]
+                   [:link {:href "" :rel "collection"}]]))
 
 (def cell
-  (wrap-as-maze [:cell {:href "" :rel ""}
-                 [:link {:href "" :rel "north"}]
-                 [:link {:href "" :rel "west"}]
-                 [:link {:href "" :rel "south"}]
-                 [:link {:href "" :rel "east"}]
-                 [:link {:href "" :rel "start"}]
-                 [:link {:href "" :rel "exit"}]
-                 [:link {:href "" :rel "maze"}]
-                 [:link {:href "" :rel "collection"}]]))
+  (wrap-with-maze [:cell {:href "" :rel ""}
+                   [:link {:href "" :rel "north"}]
+                   [:link {:href "" :rel "west"}]
+                   [:link {:href "" :rel "south"}]
+                   [:link {:href "" :rel "east"}]
+                   [:link {:href "" :rel "start"}]
+                   [:link {:href "" :rel "exit"}]
+                   [:link {:href "" :rel "maze"}]
+                   [:link {:href "" :rel "collection"}]]))
 
 (def error
-  (wrap-as-maze [:error
-                 [:title]
-                 [:code]
-                 [:message]]))
+  (wrap-with-maze [:error
+                   [:title]
+                   [:code]
+                   [:message]]))
