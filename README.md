@@ -1,4 +1,4 @@
-# hyper-cloj
+# hyper-clj
 
 [Clojure](http://clojure.org) based implementations and interpretations of the examples in *[Building Hypermedia APIs with HTML5 and Node](http://shop.oreilly.com/product/0636920020530.do)*.
 
@@ -14,4 +14,4 @@ Amundsen implements his examples principally with [NodeJS](http://nodejs.org). T
 
 This software is Copyright (c) 2012 by Michael Bradley, Jr.
 
-The use and distribution terms for this software are covered by the [Eclipse Public License 1.0](http://opensource.org/licenses/eclipse-1.0.php) which can be found in the file [epl-v10.html](http://michaelsbradleyjr.github.com/hyper-cloj/licenses/epl-v10.html) under the [licenses directory](https://github.com/michaelsbradleyjr/hyper-cloj/tree/master/licenses) at the root of this distribution. By using this software in any fashion, you are agreeing to be bound by the terms of this license. You must not remove this notice, or any other, from this software.
+The use and distribution terms for this software are covered by the [Eclipse Public License 1.0](http://opensource.org/licenses/eclipse-1.0.php) which can be found in the file [epl-v10.html](http://michaelsbradleyjr.github.com/hyper-clj/licenses/epl-v10.html) under the [licenses directory](https://github.com/michaelsbradleyjr/hyper-clj/tree/master/licenses) at the root of this distribution. By using this software in any fashion, you are agreeing to be bound by the terms of this license. You must not remove this notice, or any other, from this software.
