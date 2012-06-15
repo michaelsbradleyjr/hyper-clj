@@ -11,8 +11,6 @@
      [:meta {:http-equiv "Content-Type" :content "text/html;charset=UTF-8"}]
      (include-js "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js")
      (include-bootstrap)
-     (javascript-tag "var CLOSURE_NO_DEPS = true;")
-     (include-js "javascripts/maze.js")
      ]
     [:body
      [:h1 "Maze Game"]
@@ -26,7 +24,13 @@
         [:legend "What would you like to do"]
         [:input {:type "text" :name "move" :value ""}]
         [:input {:type "submit" :value "Go"}]
-       ]]]]))
+        ]]]
+     ;; it's important to put the following at the bottom of the
+     ;; 'body' section; if placed in the 'head' section, DOM
+     ;; ready-timing issues may ensue
+     (javascript-tag "var CLOSURE_NO_DEPS = true;")
+     (include-js "javascripts/maze.js")
+      ]))
 
 (defn- wrap-with-maze [els]
   (html [:maze {:version "1.0"}
