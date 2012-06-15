@@ -3,4 +3,4 @@
 
 (repl/connect "http://localhost:9000/repl")
 
-(js/alert "Hello.. please port the \"maze game\" javascript logic to ClojureScript again and again")
+;; (js/alert "Hello.. please port the \"maze game\" JavaScript to ClojureScript")

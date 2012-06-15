@@ -10,3 +10,4 @@ pom.xml
 .lein-plugins
 .lein-cljsbuild-compiler*/
 .lein-cljsbuild-repl/
+.repl/

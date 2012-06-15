@@ -26421,8 +26421,7 @@ clojure.browser.repl.connect = function connect(repl_server_url) {
     return iframe.style.display = "none"
   })
 };
-goog.provide("io.turbonode.hyper_cloj.maze");
+goog.provide("io.turbonode.hyper_clj.maze");
 goog.require("cljs.core");
 goog.require("clojure.browser.repl");
 clojure.browser.repl.connect.call(null, "http://localhost:9000/repl");
-alert('Hello.. please port the "maze game" javascript logic to ClojureScript again and again');
