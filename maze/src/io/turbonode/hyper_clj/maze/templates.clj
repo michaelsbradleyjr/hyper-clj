@@ -26,7 +26,7 @@
         [:legend "What would you like to do"]
         [:input {:type "text" :name "move" :value ""}]
         [:input {:type "submit" :value "Go"}]
-        ]]]
+       ]]]
       ]))
 
 (defn- wrap-with-maze [els]

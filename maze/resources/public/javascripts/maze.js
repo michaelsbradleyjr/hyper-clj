@@ -27407,9 +27407,10 @@ io.turbonode.hyper_clj.maze.init = function init() {
 };
 jayq.core.document_ready.call(null, io.turbonode.hyper_clj.maze.init);
 io.turbonode.hyper_clj.maze.attach_events = function attach_events() {
-  return document.getElementsByName("interface")[0].onsubmit = function() {
-    return alert("happy dance")
-  }
+  return jayq.core.bind.call(null, io.turbonode.hyper_clj.maze.$.call(null, "[name|=interface]"), "\ufdd0'submit", function() {
+    alert("happy dance");
+    return false
+  })
 };
 io.turbonode.hyper_clj.maze.start_link = "/maze/five-by-five/";
 io.turbonode.hyper_clj.maze.get_document = function get_document(uri) {

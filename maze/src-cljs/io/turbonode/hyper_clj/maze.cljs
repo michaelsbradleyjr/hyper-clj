@@ -16,12 +16,10 @@
 (jayq/document-ready init)
 
 (defn attach-events []
-  (set! (.-onsubmit (aget (.getElementsByName js/document "interface") 0)) (fn []
-                          (js/alert "happy dance")))
-  ;; (-> ($ "[name|=interface]")
-  ;;     (jayq/bind :submit (fn []
-  ;;                          (js/alert "happy dance"))))
-  )
+  (-> ($ "[name|=interface]")
+      (jayq/bind :submit (fn []
+                           (js/alert "happy dance")
+                           false))))
 
 (def start-link "/maze/five-by-five/")
 
