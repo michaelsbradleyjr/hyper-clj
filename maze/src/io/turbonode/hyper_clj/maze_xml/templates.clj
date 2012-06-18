@@ -1,4 +1,4 @@
-(ns io.turbonode.hyper-clj.maze.templates
+(ns io.turbonode.hyper-clj.maze-xml.templates
   (:use hiccup.core
         hiccup.element
         hiccup.page
@@ -12,7 +12,7 @@
      (include-js "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js")
      (include-bootstrap)
      (javascript-tag "var CLOSURE_NO_DEPS = true;")
-     (include-js "javascripts/maze.js")
+     (include-js "javascripts/maze_xml.js")
      ]
     [:body
      [:div {:class "container" :style "padding-top:25px;"}

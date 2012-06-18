@@ -1,10 +1,10 @@
-(ns io.turbonode.hyper-clj.maze
+(ns io.turbonode.hyper-clj.maze-xml
   (:use compojure.core
         [compojure.route :as route]
         [compojure.handler :as handler]
         hiccup.bootstrap.middleware
         [ring.adapter.jetty :only (run-jetty)])
-  (:require [io.turbonode.hyper-clj.maze.views :as views]
+  (:require [io.turbonode.hyper-clj.maze-xml.views :as views]
             [swank.swank]))
 
 ;; for development only

@@ -1,4 +1,4 @@
-(ns io.turbonode.hyper-clj.maze
+(ns io.turbonode.hyper-clj.maze-xml
   (:require [clojure.browser.repl :as repl]
             [clojure.string :as string]
             [jayq.core :as jayq]))

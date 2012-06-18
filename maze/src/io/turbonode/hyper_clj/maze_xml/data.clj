@@ -1,11 +1,13 @@
-(ns io.turbonode.hyper-clj.maze.data
+(ns io.turbonode.hyper-clj.maze-xml.data
   (:require [com.ashafa.clutch :as clutch]))
 
 (def mazes-db
   (clutch/get-database "mazes"))
 
 (defn all-mazes []
-  (clutch/all-documents mazes-db))
+  (filter (fn [m]
+            (not= (:id m) "_design/example"))
+          (clutch/all-documents mazes-db)))
 
 (defn get-maze [maze]
   (clutch/get-document mazes-db maze))

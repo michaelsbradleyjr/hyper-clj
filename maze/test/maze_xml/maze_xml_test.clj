@@ -1,6 +1,6 @@
-(ns io.turbonode.hyper-clj.maze-test
+(ns io.turbonode.hyper-clj.maze-xml-test
   (:use clojure.test
-        io.turbonode.hyper-clj.maze))
+        io.turbonode.hyper-clj.maze-xml))
 
 (deftest a-test
   (testing "FIXME, I fail."
