@@ -1,4 +1,4 @@
-# maze
+# maze-xml
 
 I'm an app. Or maybe I'm a library? I haven't decided yet. 
 
