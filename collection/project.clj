@@ -9,7 +9,8 @@
                         :compiler {:output-to "resources/public/javascripts/collection_json.js"
                                    :optimizations :whitespace
                                    :pretty-print true}}]}
-  :dependencies [[com.ashafa/clutch "0.4.0-SNAPSHOT"]
+  :dependencies [[cheshire "4.0.0"]
+                 [com.ashafa/clutch "0.4.0-SNAPSHOT"]
                  [compojure "1.1.0"]
                  [enlive "1.0.1"]
                  [hiccup "1.0.0"]
