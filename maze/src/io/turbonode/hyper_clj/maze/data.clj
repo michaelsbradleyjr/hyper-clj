@@ -46,3 +46,24 @@
                                     :cell22 [0 0 1 1]
                                     :cell23 [1 1 0 1]
                                     :cell24 [0 0 1 1]}}))))
+
+(defonce design-example
+  (let [design-example (clutch/get-document mazes-db "_design/example")]
+    (if design-example
+      design-example
+      (clutch/put-document mazes-db
+                           {:_id "_design/example"
+                            :views {:foo
+                                    {:map "function (doc) {
+                                             emit('cells', doc.cells) }"}}
+                            :shows {:cells "function (doc, req) {
+                                              return {
+                                                body: JSON.stringify(doc.cells),
+                                                headers: {
+                                                  'content-type': 'application/json'
+                                                 }
+                                              }}"}
+                            :validate_doc_update "function (newDoc, oldDoc, userCtx) {
+                                                    throw {
+                                                      forbidden: 'read-only'
+                                                    }}"}))))
