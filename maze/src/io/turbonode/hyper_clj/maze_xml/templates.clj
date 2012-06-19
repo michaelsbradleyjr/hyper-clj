@@ -35,7 +35,7 @@
 
 (def collection
   (wrap-with-maze [:collection {:href ""}
-                   [:link {:href "" :rel ""}]]))
+                   [:link {:href "" :rel "maze" :name ""}]]))
 
 (def item
   (wrap-with-maze [:item {:href ""}

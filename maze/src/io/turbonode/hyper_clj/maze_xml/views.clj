@@ -17,7 +17,8 @@
                                (h/clone-for [m (data/all-mazes)]
                                             (h/do->
                                              (h/set-attr :href (str "/maze/" (:id m) "/"))
-                                             (h/set-attr :rel (:id m))))))))
+                                             (h/set-attr :rel "maze")
+                                             (h/set-attr :name (:id m))))))))
 (defn item [maze]
   (when (data/get-maze maze)
     (xml-content (-> templates/item

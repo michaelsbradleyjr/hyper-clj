@@ -41,7 +41,7 @@
     (let [links (.-links options-elm)]
       (loop [head (first links)
              tail (rest links)]
-        (if (= (:rel head) action)
+        (if (= (or (:name head) (:rel head)) action)
           (:href head)
           (when-not (empty? tail)
              (recur (first tail)
@@ -65,10 +65,12 @@
   (show-options
    (flatten
     (map (fn [node]
-           (let [href (jayq/attr ($ node) :href)
-                 rels (string/split (jayq/attr ($ node) :rel) #" ")]
+           (let [$node ($ node)
+                 href (jayq/attr $node :href)
+                 rels (string/split (jayq/attr $node :rel) #" ")
+                 name (jayq/attr $node :name)]
              (map (fn [rel]
-                    {:rel rel :href href}) rels)))
+                    {:rel rel :href href :name name}) rels)))
          (jayq/find ($ data) :link)))))
 
 (defn set-focus []
@@ -79,8 +81,12 @@
 (defn show-options [links]
   (when-let [options-elm (first ($ ".options"))]
     (set! (.-links options-elm) links)
-    (let [txt (map (fn [{:keys [rel href]}]
-                     (if (= rel "collection") "clear" rel)) links)
+    (let [txt (map (fn [{:keys [rel href name]}]
+                     (cond
+                       (= rel "collection") "clear"
+                       (= rel "maze") (or name rel)
+                       :else rel))
+                   links)
           txt (string/join ", " txt)]
       (set! (.-innerHTML options-elm) txt))
     ))
