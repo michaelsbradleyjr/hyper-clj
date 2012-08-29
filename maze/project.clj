@@ -19,6 +19,8 @@
                  [ring "1.1.0"]
                  [ring-refresh "0.1.0"]
                  [swank-clojure "1.4.2"]]
-  :plugins [[lein-cljsbuild "0.2.1"]]
+  :plugins [[lein-cljsbuild "0.2.1"]
+            [lein-ring "0.7.1"]
+            [lein-swank "1.4.4"]]
   :ring {:handler io.turbonode.hyper-clj.maze-xml/app
          :auto-refresh? true})
